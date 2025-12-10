@@ -16,7 +16,17 @@ spec:
       containers:
       - name: flask
         image: addd275/two-tier:v1
-        ports:
-        - containerPort: 5000
+        env:
+          - name: MYSQL_HOST
+            value: "mysql-service.mysql-db.svc.cluster.local"
+          - name: MYSQL_PASSWORD
+            value: "admin"
+          - name: MYSQL_USER
+            value: "root"
+          - name: MYSQL_DB
+            value: "mysql"      
 
+        ports:
+          - containerPort: 5000
+      
 
