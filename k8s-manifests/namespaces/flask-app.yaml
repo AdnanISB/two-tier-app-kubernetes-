@@ -1,13 +1,4 @@
-# Flask Pod
 apiVersion: v1
-kind: Pod
+kind: Namespace
 metadata:
-  name: flask-pod
-  namespace: flask-app
-spec:
-  containers:
-  - name: flask
-    image: <dockerhub-username>/flask-two-tier:latest
-    ports:
-      - containerPort: 5000
-
+  name: flask-app-ns
